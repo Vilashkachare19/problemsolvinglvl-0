@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem Functions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: aqua;
+            color: rebeccapurple;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .dropdown button:hover {
+            background-color: aquamarine;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            overflow: hidden;
+            animation: fadeIn 0.3s ease-in-out;
+            z-index: 1;
+        }
+        .dropdown-content a {
+            display: block;
+            padding: 10px 15px;
+            font-size: 16px;
+            color: rebeccapurple;
+            text-decoration: none;
+            text-align: left;
+            transition: background-color 0.3s ease;
+        }
+        .dropdown-content a:hover {
+            background-color: aqua;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Choose a Function for Operation</h1>
+    <div class="dropdown">
+        <button>Functions Menu</button>
+        <div class="dropdown-content">
+            <a href="Area of circle.html">Area of a Circle</a>
+            <a href="interpolition.html">String Interpolation</a>
+            <a href="minutes.html">Convert Minutes to Hours</a>
+            <a href="datatype.html">Check Data Type</a>
+            <a href="temp.html">Temperature Converter</a>
+            <a href="evenodd.html">Check Even or Odd</a>
+            <a href="bill.html">Calculate Total Bill</a>
+            <a href="twonum.html">Compare Two Numbers</a>
+            <a href="reverse.html">Reverse a String</a>
+            <a href="age.html">Calculate Age</a>
+        </div>
+    </div>
+</body>
+</html>

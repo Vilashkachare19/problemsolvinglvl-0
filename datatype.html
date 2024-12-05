@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Type Checker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: left;
+        }
+        input, button {
+            padding: 10px;
+            margin: 10px;
+        }
+        .output {
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Check Data Type</h1>
+    <label for="valueInput">Enter a value:</label>
+    <input type="text" id="valueInput" placeholder="Type something..." />
+    <button onclick="checkDataType()">Check Type</button>
+    <div class="output" id="result"></div>
+    <a href="index.html">
+        <button>Return</button>
+
+    <script>
+        function checkDataType() {
+            const inputValue = document.getElementById('valueInput').value;
+
+            // Determine the type of the value
+            let type;
+            if (inputValue === "") {
+                type = "Empty String";
+            } else if (!isNaN(inputValue) && inputValue.trim() !== "") {
+                type = inputValue.includes('.') ? "Number (float)" : "Number (integer)";
+            } else if (inputValue.toLowerCase() === "true" || inputValue.toLowerCase() === "false") {
+                type = "Boolean";
+            } else {
+                type = typeof inputValue;
+            }
+
+            // Display the result
+            document.getElementById('result').innerText = `The type of the value is: ${type}`;
+        }
+    </script>
+</body>
+</html>

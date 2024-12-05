@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Name Generator</title>
+</head>
+<body>
+    <h1>Full Name Generator</h1>
+
+    <!-- Input for first name -->
+    <label for="firstName">First Name:</label>
+    <input type="text" id="firstName" placeholder="Enter First Name" /><br><br>
+
+    <!-- Input for last name -->
+    <label for="lastName">Last Name:</label>
+    <input type="text" id="lastName" placeholder="Enter Last Name" /><br><br>
+
+    <!-- Button to generate full name -->
+    <button onclick="generateFullName()">Generate Full Name</button>
+
+    <!-- Display the full name -->
+    <p id="fullName"></p>
+    <a href="index.html">
+        <button>Return</button>
+    <script>
+        function generateFullName() {
+            // Get the first name and last name from the input fields
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+
+            // Check if both names are provided
+            if (firstName.trim() === '' || lastName.trim() === '') {
+                document.getElementById('fullName').innerText = 'Please enter both first and last names.';
+            } else {
+                // Combine the names to create the full name
+                const fullName = firstName + ' ' + lastName;
+                
+                // Display the full name
+                document.getElementById('fullName').innerText = 'Full Name: ' + fullName;
+            }
+        }
+    </script>
+</body>
+</html>

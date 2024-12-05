@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Area Of Circle Calculator</h1>
+    <label for="radius">Radius: </label>
+    <input type="number" id="radius" placeholder="Enter Radius"/>
+    <button onclick="calculateArea()">Calculate Area</button>
+    <p id="result"></p>
+    <a href="index.html">
+        <button>Return</button>
+    <script>
+        function calculateArea() {
+            // Get the radius value from the input field
+            const radius = document.getElementById('radius').value;
+            
+            // Check if the radius is a valid number
+            if (radius <= 0) {
+                document.getElementById('result').innerText = 'Please enter a valid radius greater than zero.';
+                return;
+            }
+            
+            // Calculate the area of the circle
+            const area = Math.PI * Math.pow(radius, 2);
+            
+            // Display the result
+            document.getElementById('result').innerText = 'Area of the circle: ' + area.toFixed(2);
+        }
+    </script>
+</body>
+</html>

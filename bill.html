@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Total Bill Calculator</title>
+    <script>
+        function calculateTotalBill() {
+            const billAmountInput = document.getElementById("billAmount").value;
+            const result = document.getElementById("result");
+
+            if (billAmountInput === "") {
+                result.textContent = "Please enter the bill amount.";
+                return;
+            }
+
+            const billAmount = parseFloat(billAmountInput);
+
+            if (isNaN(billAmount) || billAmount < 0) {
+                result.textContent = "Invalid input. Please enter a valid bill amount.";
+            } else {
+                const tip = billAmount * 0.10;
+                const total = billAmount + tip;
+                result.textContent = `Bill: $${billAmount.toFixed(2)}, Tip: $${tip.toFixed(2)}, Total: $${total.toFixed(2)}`;
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Total Bill Calculator</h1>
+    <label for="billAmount">Enter Bill Amount ($):</label>
+    <input type="text" id="billAmount" placeholder="Enter amount">
+    <button onclick="calculateTotalBill()">Calculate</button>
+    <p id="result"></p>
+    <a href="index.html">
+        <button>Return</button>
+</body>
+</html>

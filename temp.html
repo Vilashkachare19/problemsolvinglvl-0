@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: left;
+        }
+        input, select, button {
+            padding: 10px;
+            margin: 10px;
+        }
+        .output {
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Temperature Converter</h1>
+    <label for="temperatureInput">Enter temperature:</label>
+    <input type="number" id="temperatureInput" placeholder="e.g., 32" />
+    <label for="conversionType">Convert to:</label>
+    <select id="conversionType">
+        <option value="C">Celsius</option>
+        <option value="F">Fahrenheit</option>
+    </select>
+    <button onclick="convertTemperature()">Convert</button>
+    <div class="output" id="result"></div>
+    <a href="index.html">
+        <button>Return</button>
+
+    <script>
+        function convertTemperature() {
+            const temperature = parseFloat(document.getElementById('temperatureInput').value);
+            const conversionType = document.getElementById('conversionType').value;
+
+            if (isNaN(temperature)) {
+                document.getElementById('result').innerText = "Please enter a valid number.";
+                return;
+            }
+
+            let convertedTemperature;
+            if (conversionType === "C") {
+                // Convert Fahrenheit to Celsius
+                convertedTemperature = ((temperature - 32) * 5) / 9;
+                document.getElementById('result').innerText = 
+                    `${temperature}°F is equal to ${convertedTemperature.toFixed(2)}°C`;
+            } else if (conversionType === "F") {
+                // Convert Celsius to Fahrenheit
+                convertedTemperature = (temperature * 9) / 5 + 32;
+                document.getElementById('result').innerText = 
+                    `${temperature}°C is equal to ${convertedTemperature.toFixed(2)}°F`;
+            }
+        }
+    </script>
+</body>
+</html>

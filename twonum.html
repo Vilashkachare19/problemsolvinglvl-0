@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Larger Number</title>
+    <script>
+        function findLargerNumber() {
+            const num1Input = document.getElementById("num1").value;
+            const num2Input = document.getElementById("num2").value;
+            const result = document.getElementById("result");
+
+            if (num1Input === "" || num2Input === "") {
+                result.textContent = "Please enter both numbers.";
+                return;
+            }
+
+            const num1 = parseFloat(num1Input);
+            const num2 = parseFloat(num2Input);
+
+            if (isNaN(num1) || isNaN(num2)) {
+                result.textContent = "Invalid input. Please enter valid numbers.";
+            } else if (num1 > num2) {
+                result.textContent = `The larger number is ${num1}.`;
+            } else if (num2 > num1) {
+                result.textContent = `The larger number is ${num2}.`;
+            } else {
+                result.textContent = "Both numbers are equal.";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Find the Larger Number</h1>
+    <label for="num1">Enter first number:</label>
+    <input type="text" id="num1" placeholder="First number">
+    <br>
+    <label for="num2">Enter second number:</label>
+    <input type="text" id="num2" placeholder="Second number">
+    <br>
+    <button onclick="findLargerNumber()">Find Larger Number</button>
+    <p id="result"></p>
+    <a href="index.html">
+        <button>Return</button>
+</body>
+</html>
